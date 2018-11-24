@@ -101,7 +101,8 @@
     .portfolio-item .hover {
         background: #15a4fa;
         opacity: 0.9;
-        display: none !important;
+        visibility: hidden;
+        transition: all 0.3s ease;
     }
 
     .portfolio-item .hover .fa {
@@ -111,7 +112,7 @@
     }
 
     .portfolio-item figure:hover .hover {
-        display: flex !important;
+        visibility: visible;
     }
 
     .portfolio-item .hover .fa:hover {
