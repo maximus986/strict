@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext");
+
+/*---------------------------------------
+---------------GENERAL STYLE-------------
+---------------------------------------*/
+
+html {
+    font-size: 13px;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.title,
+.design-item-title {
+    color: #2d3950;
+}
+
+p {
+    color: #999;
+    margin-bottom: 0;
+}
+
+/*---------------------------------------
+---------------HEADER STYLE--------------
+---------------------------------------*/
+.navbar {
+    padding: 0.5rem 0;
+}
+
+.navbar-light .navbar-brand {
+    color: #2d3950;
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+    color: #2d3950;
+}
+
+.navbar-light button.hamburger,
+.navbar-light button.hamburger:focus {
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #999;
+    padding: 10px 0;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #15a4fa;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: #000;
+}
+
+/*---------------------------------------
+-----------Hamburger spin start----------
+---------------------------------------*/
+.hamburger {
+    padding: 15px 0;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+.hamburger:hover {
+    opacity: 0.8;
+}
+
+.hamburger.is-active:hover {
+    opacity: 0.8;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #15a4fa;
+}
+
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 33px;
+    height: 3px;
+    background-color: #2d3950;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+.hamburger--spin .hamburger-inner {
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in,
+        transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+    transform: rotate(225deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out,
+        transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*---------------------------------------
+----------Hamburger spin end-------------
+----------------------------------------*/
+
+/*---------------------------------------
+---------------MAIN STYLE---------------
+---------------------------------------*/
+
+.strict {
+    padding: 50px 0 50px;
+    background-size: cover;
+    background-position: center;
+}
+
+.strict h1 {
+    font-weight: 700 !important;
+}
+
+.strict h1:after {
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: #15a4fa;
+    width: 100%;
+    margin: 15px auto;
+}
+
+.strict p.lead {
+    color: #fff;
+}
+
+button[type="button"].btn,
+button[type="submit"].btn {
+    color: #fff;
+    border-color: #15a4fa;
+    font-size: 1.2rem;
+    outline: none;
+    padding: 12px 30px;
+}
+
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem #48BAFF;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #15a4fa;
+    border-color: #15a4fa;
+}
+
+.strict button:hover {
+    background: #15a4fa;
+}
+
+.features .fa {
+    font-size: 2rem;
+    color: #fff;
+    background-image: linear-gradient(to right, #15a4fa 50%, #48BAFF 50.001%);
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    text-shadow: -1px 1px 1px rgba(2,2,2,0.4);
+    border-radius: 2px;
+}
+
+.features .fa-mobile {
+    font-size: 3rem;
+}
+
+.portfolio-item figure {
+    position: relative;
+}
+
+.portfolio-item figure img {
+    width: 100%; 
+    display: block;
+}
+
+.portfolio-item .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio-item .hover .fa {
+    border: 1px solid #15a4fa;
+    background: #15a4fa;
+    opacity: 0.6;
+    padding: 12px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.subscribe {
+    background-size: cover;
+    background-position: center;
+}
+
+.subscribe .title {
+    color: #fff;
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+.form-control {
+    padding: 15px 20px;
+    font-size: 1rem;
+    height: auto;
+    line-height: 1.5;
+    color: #999999;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border-radius: 3px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #999;
+    background-color: transparent;
+    border-color: #15a4fa;
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem #48BAFF;
+}
+
+.subscribe textarea {
+    resize: none;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    padding-left: 25px;
+    line-height: 12px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 0px;
+    visibility: hidden;
+    display: none;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+}
+
+.fake-checkbox {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+    background: #9AA1AB;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+input[type="checkbox"]:checked ~ .fake-checkbox {
+    background-color: #15a4fa;
+}
+
+.subscribe button[type=submit] {
+    padding: 8px 50px;
+}
+
+/*---------------------------------------
+---------------FOOTER STYLE---------------
+---------------------------------------*/
+
+.main-footer .social .fa {
+    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background: #15a4fa;
+    border-radius: 3px;
+    border: 1px solid #15a4fa;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.main-footer .social .fa:hover {
+    background: transparent;
+    color: #15a4fa; 
+}

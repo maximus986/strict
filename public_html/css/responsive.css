@@ -1,0 +1,135 @@
+@media (min-width: 576px) {
+    .strict {
+        padding: 100px 0 100px;
+    }
+
+    .strict h1:after {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .features-item-title {
+        height: 3rem;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    .navbar-light .navbar-brand {
+        line-height: 1;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    .strict {
+        padding: 150px 0 150px;
+    }
+
+    .strict h1:after {
+        width: 75%;
+        margin: 20px auto; 
+    }
+
+    .features-item-title {
+        height: auto;
+        overflow: visible;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-light button.hamburger {
+        display: none;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        border: none;
+        font-weight: 400;
+        padding: 10px 30px;
+        transition: 0.3s ease;
+    }
+
+    .navbar-light .navbar-nav .nav-item:last-of-type .nav-link {
+        padding-right: 0;
+    }
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link:focus {
+        font-weight: 400;
+        color: #15a4fa;
+    }
+
+    .strict {
+        padding: 218px 0 281px;
+    }
+
+    .strict h1 {
+        margin-bottom: 34px !important;
+    }
+
+    .strict h1:after {
+        width: 57%;
+        margin: 30px auto; 
+    }
+
+    .strict p.lead {
+        margin-bottom: 64px !important;
+    }
+
+    .design {
+        padding: 81px 0 110px !important;
+    }
+
+    .title {
+        font-size: 2.63rem !important;
+        margin-bottom: 21px !important;
+    }
+
+    .subtitle {
+        font-size: 20px !important;
+    }
+
+    .features {
+        padding: 65px 0 !important;
+    }
+
+    .portfolio-item .hover {
+        background: #15a4fa;
+        opacity: 0.9;
+        display: none !important;
+    }
+
+    .portfolio-item .hover .fa {
+        border: 1px solid #fff;
+        opacity: 1;
+        transition: 0.3s ease;
+    }
+
+    .portfolio-item figure:hover .hover {
+        display: flex !important;
+    }
+
+    .portfolio-item .hover .fa:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    .subscribe {
+        padding: 74px 0 111px;
+    }
+
+    .subscribe .subtitle {
+        margin-bottom: 51px !important;
+    }
+
+    .main-footer {
+        padding: 20px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+}
