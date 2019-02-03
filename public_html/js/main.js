@@ -8,15 +8,13 @@ $(document).ready(function () {
   // Animations
 
   function animation() {
-    var windowHeight = $(window).height();
-    var scrollTop = $(window).scrollTop();
-    console.log(windowHeight, scrollTop);
+    const windowHeight = $(window).height();
+    const scrollTop = $(window).scrollTop();
 
     $('.animation').each(function () {
-      var topPosition = $(this).offset().top;
-      console.log(topPosition);
+      const topPosition = $(this).offset().top;
       if (topPosition < scrollTop + windowHeight - 100) {
-        var animation = $(this).data('animation');
+        const animation = $(this).data('animation');
         $(this).addClass(animation);
       }
     });
@@ -27,5 +25,5 @@ $(document).ready(function () {
   $(window).scroll(function () {
     animation();
   });
-
+  
 });
