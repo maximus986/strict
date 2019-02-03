@@ -377,3 +377,83 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
     background: transparent;
     color: #15a4fa; 
 }
+
+
+/* Animations */
+
+.animation{
+    visibility: hidden;
+    position: relative;
+    transition: 1s linear;
+}
+
+@keyframes slideLeft {
+    0%{
+        opacity:0;
+        transform:translateX(50%);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.slideLeft{
+    animation-name: slideLeft;
+    visibility:visible;
+    animation-duration: 1s; 
+    
+}
+
+
+@keyframes slideRight {
+    0%{
+        opacity:0;
+        transform:translateX(-50%);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.slideRight{
+    animation-name: slideRight;
+    visibility:visible;
+    animation-duration: 1s;
+}
+
+@keyframes slideUp {
+    0%{
+        opacity:0;
+        transform:translateY(50%);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.slideUp{
+    animation-name: slideUp;
+    visibility:visible;
+    
+    animation-duration: 1s;
+}
+
+@keyframes slideDown {
+    0%{
+        opacity:0;
+        transform:translateY(-50%);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.slideDown{
+    animation-name: slideDown;
+    visibility:visible;
+    animation-duration: 1s;
+}
