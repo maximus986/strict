@@ -79,9 +79,14 @@ p {
     padding: 15px 0;
     display: inline-block;
     cursor: pointer;
+    -webkit-transition-property: opacity, -webkit-filter;
+    transition-property: opacity, -webkit-filter;
     transition-property: opacity, filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
+    transition-property: opacity, filter, -webkit-filter;
+    -webkit-transition-duration: 0.15s;
+            transition-duration: 0.15s;
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
     font: inherit;
     color: inherit;
     text-transform: none;
@@ -126,9 +131,14 @@ p {
     background-color: #2d3950;
     border-radius: 4px;
     position: absolute;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
     transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.15s;
+            transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
 }
 
 .hamburger-inner::before,
@@ -146,36 +156,58 @@ p {
 }
 
 .hamburger--spin .hamburger-inner {
-    transition-duration: 0.22s;
-    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    -webkit-transition-duration: 0.22s;
+            transition-duration: 0.22s;
+    -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--spin .hamburger-inner::before {
+    -webkit-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
 }
 
 .hamburger--spin .hamburger-inner::after {
+    -webkit-transition: bottom 0.1s 0.25s ease-in,
+        -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.25s ease-in,
+        -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in,
         transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.25s ease-in,
+        transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+        -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .hamburger--spin.is-active .hamburger-inner {
-    transform: rotate(225deg);
-    transition-delay: 0.12s;
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+    -webkit-transition-delay: 0.12s;
+            transition-delay: 0.12s;
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .hamburger--spin.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
+    -webkit-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
     transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
 }
 
 .hamburger--spin.is-active .hamburger-inner::after {
     bottom: 0;
-    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    -webkit-transition: bottom 0.1s ease-out,
+        -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.1s ease-out,
+        -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
     transition: bottom 0.1s ease-out,
         transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.1s ease-out,
+        transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1),
+        -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*---------------------------------------
@@ -220,7 +252,8 @@ button[type="submit"].btn {
 
 .btn:focus, .btn.focus {
     outline: 0;
-    box-shadow: 0 0 0 0.05rem #48BAFF;
+    -webkit-box-shadow: 0 0 0 0.05rem #48BAFF;
+            box-shadow: 0 0 0 0.05rem #48BAFF;
 }
 
 .btn-outline-primary:hover {
@@ -236,6 +269,7 @@ button[type="submit"].btn {
 .features .fa {
     font-size: 2rem;
     color: #fff;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #15a4fa), color-stop(50.001%, #48BAFF));
     background-image: linear-gradient(to right, #15a4fa 50%, #48BAFF 50.001%);
     width: 60px;
     height: 60px;
@@ -289,6 +323,18 @@ button[type="submit"].btn {
     color: #fff;
 }
 
+.form-control::-webkit-input-placeholder {
+    color: #999;
+}
+
+.form-control:-ms-input-placeholder {
+    color: #999;
+}
+
+.form-control::-ms-input-placeholder {
+    color: #999;
+}
+
 .form-control::placeholder {
     color: #999;
 }
@@ -303,7 +349,10 @@ button[type="submit"].btn {
     background-clip: padding-box;
     border: 1px solid #999;
     border-radius: 3px;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
 .form-control:focus {
@@ -311,7 +360,8 @@ button[type="submit"].btn {
     background-color: transparent;
     border-color: #15a4fa;
     outline: 0;
-    box-shadow: 0 0 0 0.05rem #48BAFF;
+    -webkit-box-shadow: 0 0 0 0.05rem #48BAFF;
+            box-shadow: 0 0 0 0.05rem #48BAFF;
 }
 
 .subscribe textarea {
@@ -359,7 +409,8 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
 /* Form validation style */
 
 .form-control:focus{
-    box-shadow:  none !important;
+    -webkit-box-shadow:  none !important;
+            box-shadow:  none !important;
 }
 
 .form-control-success,
@@ -368,7 +419,6 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
     padding-right: 2.25rem;
     background-repeat: no-repeat;
     background-position: center right 0.5625rem;
-    -webkit-background-size: 1.125rem 1.125rem;
     background-size: 1.125rem 1.125rem;
 }
 
@@ -384,7 +434,8 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
     border-color: #5cb85c;
 }
 .has-success .form-control:focus {
-    box-shadow: 0 0 2px #5cb85c !important;
+    -webkit-box-shadow: 0 0 2px #5cb85c !important;
+            box-shadow: 0 0 2px #5cb85c !important;
 }
 
 .has-success .input-group-addon {
@@ -409,7 +460,8 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
     border-color: #f0ad4e;
 }
 .has-warning .form-control:focus {
-    box-shadow:0 0 2px #f0ad4e !important;
+    -webkit-box-shadow:0 0 2px #f0ad4e !important;
+            box-shadow:0 0 2px #f0ad4e !important;
 }
 
 .has-warning .input-group-addon {
@@ -434,7 +486,8 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
     border-color: #d9534f !important;
 }
 .has-danger .form-control:focus {
-    box-shadow:0 0 2px #d9534f !important;
+    -webkit-box-shadow:0 0 2px #d9534f !important;
+            box-shadow:0 0 2px #d9534f !important;
 }
 
 .has-danger .input-group-addon {
@@ -467,6 +520,7 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
     border-radius: 3px;
     border: 1px solid #15a4fa;
     text-decoration: none;
+    -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
 }
 
@@ -481,76 +535,147 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
 .animation{
     visibility: hidden;
     position: relative;
+    -webkit-transition: 1s linear;
     transition: 1s linear;
+}
+
+@-webkit-keyframes slideLeft {
+    0%{
+        opacity:0;
+        -webkit-transform:translateX(50%);
+                transform:translateX(50%);
+    }
+    100%{
+        opacity:1;
+        -webkit-transform:translateX(0);
+                transform:translateX(0);
+    }
 }
 
 @keyframes slideLeft {
     0%{
         opacity:0;
-        transform:translateX(50%);
+        -webkit-transform:translateX(50%);
+                transform:translateX(50%);
     }
     100%{
         opacity:1;
-        transform:translateX(0);
+        -webkit-transform:translateX(0);
+                transform:translateX(0);
     }
 }
 
 .slideLeft{
-    animation-name: slideLeft;
+    -webkit-animation-name: slideLeft;
+            animation-name: slideLeft;
     visibility:visible;
-    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s; 
     
+}
+
+
+@-webkit-keyframes slideRight {
+    0%{
+        opacity:0;
+        -webkit-transform:translateX(-50%);
+                transform:translateX(-50%);
+    }
+    100%{
+        opacity:1;
+        -webkit-transform:translateX(0);
+                transform:translateX(0);
+    }
 }
 
 
 @keyframes slideRight {
     0%{
         opacity:0;
-        transform:translateX(-50%);
+        -webkit-transform:translateX(-50%);
+                transform:translateX(-50%);
     }
     100%{
         opacity:1;
-        transform:translateX(0);
+        -webkit-transform:translateX(0);
+                transform:translateX(0);
     }
 }
 
 .slideRight{
-    animation-name: slideRight;
+    -webkit-animation-name: slideRight;
+            animation-name: slideRight;
     visibility:visible;
-    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+@-webkit-keyframes slideUp {
+    0%{
+        opacity:0;
+        -webkit-transform:translateY(50%);
+                transform:translateY(50%);
+    }
+    100%{
+        opacity:1;
+        -webkit-transform:translateY(0);
+                transform:translateY(0);
+    }
 }
 
 @keyframes slideUp {
     0%{
         opacity:0;
-        transform:translateY(50%);
+        -webkit-transform:translateY(50%);
+                transform:translateY(50%);
     }
     100%{
         opacity:1;
-        transform:translateY(0);
+        -webkit-transform:translateY(0);
+                transform:translateY(0);
     }
 }
 
 .slideUp{
-    animation-name: slideUp;
+    -webkit-animation-name: slideUp;
+            animation-name: slideUp;
     visibility:visible;
     
-    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    
+            animation-duration: 1s;
+}
+
+@-webkit-keyframes slideDown {
+    0%{
+        opacity:0;
+        -webkit-transform:translateY(-50%);
+                transform:translateY(-50%);
+    }
+    100%{
+        opacity:1;
+        -webkit-transform:translateX(0);
+                transform:translateX(0);
+    }
 }
 
 @keyframes slideDown {
     0%{
         opacity:0;
-        transform:translateY(-50%);
+        -webkit-transform:translateY(-50%);
+                transform:translateY(-50%);
     }
     100%{
         opacity:1;
-        transform:translateX(0);
+        -webkit-transform:translateX(0);
+                transform:translateX(0);
     }
 }
 
 .slideDown{
-    animation-name: slideDown;
+    -webkit-animation-name: slideDown;
+            animation-name: slideDown;
     visibility:visible;
-    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
 }

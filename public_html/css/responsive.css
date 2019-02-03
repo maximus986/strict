@@ -26,6 +26,7 @@
         width: 100%;
         background: #fff;
         z-index: 100;
+        -webkit-transition: 0.7s ease;
         transition: 0.7s ease;
     }
 
@@ -62,6 +63,7 @@
         border: none;
         font-weight: 400;
         padding: 10px 30px;
+        -webkit-transition: 0.3s ease;
         transition: 0.3s ease;
     }
 
@@ -112,12 +114,14 @@
         background: #15a4fa;
         opacity: 0.9;
         visibility: hidden;
+        -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
     }
 
     .portfolio-item .hover .fa {
         border: 1px solid #fff;
         opacity: 1;
+        -webkit-transition: 0.3s ease;
         transition: 0.3s ease;
     }
 
