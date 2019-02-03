@@ -31,12 +31,12 @@ and open the template in the editor.
     <title>STRICT</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#main-nav" class="position-relative">
     <!-- Header start -->
     <header class="main-header py-lg-4">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light animation" data-animation="slideDown">
-                <a class="navbar-brand text-uppercase" href="#">
+                <a class="navbar-brand text-uppercase" href="index.html">
                     <img src="img/logo.png" class="d-inline-block align-top mr-2" alt="logo" /> strict
                 </a>
                 <button class="hamburger hamburger--spin" type="button" data-toggle="collapse" data-target="#main-nav"
@@ -44,14 +44,13 @@ and open the template in the editor.
                     <span class="hamburger-box"> <span class="hamburger-inner"></span> </span>
                 </button>
                 <div class="collapse navbar-collapse" id="main-nav">
-                    <ul class="navbar-nav ml-auto text-capitalize">
+                    <ul class="navbar-nav ml-auto text-capitalize text-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">about <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#about">about <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#">how it works</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">faq</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#how-it-works">how it works</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -61,7 +60,7 @@ and open the template in the editor.
 
     <main>
         <!-- Strict start -->
-        <section class="strict text-center text-white" style="background-image: url(img/image.jpg)">
+        <section class="strict text-center text-white" style="background-image: url(img/image.jpg)" id="about">
             <div class="container">
                 <h1 class="display-1 text-uppercase mb-3 animation" data-animation="slideUp">
                     strict
@@ -74,7 +73,7 @@ and open the template in the editor.
         <!-- Strict end -->
 
         <!-- Design start -->
-        <section class="design py-5 text-center" style="background: #F6F9F9">
+        <section class="design py-5 text-center" style="background: #F6F9F9" id="how-it-works">
             <div class="container">
                 <h2 class="title mb-4 animation" data-animation="slideRight">
                     Simple & pure design.
@@ -126,7 +125,7 @@ and open the template in the editor.
         <!-- Features end -->
 
         <!-- Portfolio start -->
-        <section class="portfolio text-center py-3 py-lg-5" style="background: #F6F9F9">
+        <section class="portfolio text-center py-3 py-lg-5" style="background: #F6F9F9" id="services">
             <div class="container">
                 <h2 class="title pt-5 mb-4 animation" data-animation="slideRight">Showcase your work like a pro.</h2>
                 <p class="lead subtitle mb-5 animation" data-animation="slideLeft">Contact me if you like my work</p>
@@ -203,7 +202,8 @@ and open the template in the editor.
         <!-- Portfolio end -->
 
         <!-- Subscribe start -->
-        <section class="subscribe text-center py-3 py-lg-5" style="background-image: url(img/overlay.png), url(img/form.jpg)">
+        <section class="subscribe text-center py-3 py-lg-5" style="background-image: url(img/overlay.png), url(img/form.jpg)"
+            id="contact">
             <div class="container">
                 <h2 class="title pt-5 mb-4">Stay with us</h2>
                 <p class="lead subtitle mb-5">We ensure quailty & support</p>

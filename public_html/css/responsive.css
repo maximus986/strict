@@ -19,6 +19,16 @@
         font-size: 15px;
     }
 
+    .main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        z-index: 100;
+        transition: 0.7s ease;
+    }
+
     .navbar-light .navbar-brand {
         line-height: 1;
     }
