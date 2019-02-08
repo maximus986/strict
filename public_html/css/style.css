@@ -222,6 +222,7 @@ p {
     padding: 50px 0 50px;
     background-size: cover;
     background-position: center;
+    height: 100vh;
 }
 
 .strict h1 {
@@ -533,6 +534,7 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
 /* Animations */
 
 
+
 /* Buzz Out */
 @-webkit-keyframes buzz {
     10% {
@@ -728,8 +730,6 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
       animation-duration: 1s;
   }
   
-  
-  
   @keyframes slideDown {
       0%{
           opacity:0;
@@ -758,14 +758,12 @@ input[type="checkbox"]:checked ~ .fake-checkbox {
       opacity: 0;
   }
   
-  
   .zoom{
       animation-name: zoom;
       visibility: visible;
       animation-duration: 2s;
       opacity: 1;
   }
-  
   
   @keyframes zoom{
       0%{
